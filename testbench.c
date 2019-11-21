@@ -23,6 +23,7 @@ main(){
 
 int data1[] = {1,1,4,8,6,2,7,1};
 int data2[] ={1,5,4,9,4,6,2,7,6};
+int data3[] = {1, 5, 5, 3, 5, 2, 2, 7, 4};
 struct Stream s;
 
 s.buffer = data1;
@@ -62,5 +63,26 @@ s.cnt =0;
 
 val = valley(&s,3);
 printf("result for valley({1,5,4,9,4,6,2,7,6},3) i.e. are there 3 valleys in the data? %d\n",val);
+
+s.buffer = data1;
+s.size = 8;
+s.cnt =0;
+
+val = increasing_peak(&s,0);
+printf("result for increasing_peak({1,1,4,8,6,2,7,1},0) i.e. are there is 0 increasing peaks in the data? %d\n",val);
+
+s.buffer = data2;
+s.size = 9;
+s.cnt =0;
+
+val = increasing_peak(&s,0);
+printf("result for increasing_peak({1,5,4,9,4,6,2,7,6},0) i.e. are there 0 increasing peaks in the data? %d\n",val);
+
+s.buffer = data3;
+s.size = 9;
+s.cnt =0;
+
+val = increasing_peak(&s,1);
+printf("result for increasing_peak({1, 5, 5, 3, 5, 2, 2, 7, 4}, 1) i.e. are there 1 increasing_peak in the data? %d\n",val);
 }
 
